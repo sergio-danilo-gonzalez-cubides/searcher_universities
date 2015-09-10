@@ -1,0 +1,64 @@
+
+
+<% if user_signed_in? %>
+    Usuario :  <strong><%= current_user.email %></strong>
+    <%= link_to 'Editar Perfil', edit_user_registration_path, class: "btn btn-sm btn-primary" %>
+    <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-danger"   %>
+<% else %>
+    <a href="/users/sign_up" class="btn btn-sm btn-danger">Registrarse</a>
+    <a href="<%= new_user_session_path %>" class="btn btn-sm btn-danger">Iniciar sesión</a></li>
+<% end %>
+
+
+
+
+<h4> USUARIOS </h4>
+
+
+<h4> SEMIlLAS </h4>
+<h4> INFORMACION TOTAL DE UNIVERSIDADES </h4>
+
+
+
+
+<div class="modal fade"  data-backdrop="static" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="size_modal" class="modal-dialog">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <button type="button" class="close" id="btn_cerrar_modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title"  id="myModalLabel"></h5>
+      </div>
+      <div class="modal-body" style="overflow: hidden;">
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<h3><a data-remote="true" id="btprueba" onclick="prueba()"  class="btn btn-danger" > MODAL <span class="glyphicon glyphicon-plus"></span></a></h3>
+
+<script>
+
+    function prueba () {
+
+        $('.modal-body,.modal-footer').empty();
+        $('#myModal').modal('show');
+
+        $('#size_modal').attr("class","modal-dialog");
+        $('#myModalLabel').html('    NUEVO ANTICIPO    ');
+
+    }
+
+
+
+</script>
+
+<h4> Buscador de Unversidades </h4>
+
+
+
